@@ -8,14 +8,18 @@
 </head>
 
 <body>
+    <div id="graphics" style="height: 100px; width: 100px;"></div>
     <script src="https://pixijs.download/release/pixi.js"></script>
     <script>
         const app = new PIXI.Application({
             background: '#1099bb',
-            resizeTo: window,
+            resizeTo: document.getElementById('graphics'),
         });
 
-        document.body.appendChild(app.view);
+        document.getElementById('graphics').appendChild(app.view);
+
+        const bunny = PIXI.Sprite.from('https://pixijs.com/assets/bunny.png');
+        app.stage.addChild(bunny);
     </script>
 </body>
 
